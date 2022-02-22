@@ -51,8 +51,9 @@ ssh -i $KEY_FILE ec2-user@$IP_ADDRESS  << 'EOF'
    curl https://pyenv.run | bash
    
    echo 'export PATH=$PATH:~/.pyenv/bin' >> ~/.bash_profile 
-   echo 'eval "$(pyenv init -)"' >> ~/.bashrc 
    echo 'eval "$(pyenv init --path)"' >> ~/.bash_profile
+   echo 'export PATH=$PATH:~/.pyenv/bin' >> ~/.bashrc
+   echo 'eval "$(pyenv init -)"' >> ~/.bashrc 
 EOF
 
 echo "Installing python"
